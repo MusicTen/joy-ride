@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
+<!-- 页面加载的时候添加一个定时器，0秒之后执行hideURLbar函数。hideURLbar函数将页面滚动至坐标（0,1） -->
+<!-- 因为chrome等浏览器会有滚动缓存功能，比如你在A页面滚动后跳转到B页面，点击返回键回到A页面，会发现滚动条位置仍然保持，这是个不错的功能，但是可能在某些特殊场景不适用，所以会出现以下代码。 -->
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--// Meta tag Keywords -->
@@ -153,7 +155,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<button type="button" class="close" data-dismiss="modal">&times;</button> <!-- &times;直接解析成 x （乘号）-->
 					<img src="images/model1.jpg" alt=" " class="img-responsive">
 					<h5>Donec lobortis pharetra dolor</h5>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, rds which don't look even slightly believable..</p>
@@ -395,6 +397,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //js -->
 <!-- banner-slider -->
 <script src="js/JiSlider.js"></script>
+<!-- JiSlider is a simple jQuery Plugin used to create an Image Slider. The settings can be modified to create the desired the slider. -->
 <script>
 	$(window).load(function () {
 		$('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: true}).addClass('ff')
